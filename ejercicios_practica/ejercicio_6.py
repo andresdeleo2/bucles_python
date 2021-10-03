@@ -24,5 +24,11 @@ cantidad_numeros_positivos = 0  # Inicializo el contador en 0
 # for ... in range(....)
 
 # Imprimir el valor de la cantidad de números positivos y negativos
+for i in range(inicio,fin+1):
+    if i >=0:
+        cantidad_numeros_positivos = cantidad_numeros_positivos + 1
+
+print("cantidad de numeros positivos incluyendo el cero: ",cantidad_numeros_positivos)
+
 
 print("terminamos!")
