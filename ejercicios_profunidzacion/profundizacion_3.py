@@ -10,6 +10,9 @@
 # de mucho más tiempo para abordar estos temas por su cuenta.
 # Requiere mayor tiempo de dedicación e investigación autodidacta.
 
+from os import pipe
+
+
 notas = [70, 82, -1, 65, 55, 67, 87, 92, -1]
 
 # IMPORTANTE: NO borrar los comentarios en VERDE o NARANJA
@@ -22,7 +25,7 @@ Debe caluclar el promedio de todas las notas que se encuentra
 almacenadas en una lista llamada "notas" que ya
 hemos definido al comienzo del archivo
 
-Luego transformar la califiación en una letra
+Luego transformar la calificación en una letra
 según la siguiente escala:
 - Si el puntaje es mayor igual a 90 --> imprimir A
 - Si el puntaje es mayor igual a 80 --> imprimir B
@@ -56,3 +59,25 @@ cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
 # a calificación con letras, imprima en pantalla el resultado
 
 # Imprima en pantalla al cantidad de ausentes
+
+for i in range(0,len(notas)):
+    if notas[i] < 0 :
+        cantidad_ausentes = cantidad_ausentes + 1
+    else:
+        sumatoria = sumatoria + notas[i]
+        cantidad_notas += 1
+        if notas [i] >= 90:
+            print("A")
+        elif notas[i] >= 80:
+            print("B")
+        elif notas[i] >= 70:
+            print("C")
+        elif notas[i] >= 60:
+            print("D")
+        else: print("F")
+
+print("Cantidad de Notas Validas: ", cantidad_notas)
+print("Cantidad de Ausentes: ", cantidad_ausentes)
+print("Promedio de la clase: ", sumatoria/cantidad_notas) 
+
+

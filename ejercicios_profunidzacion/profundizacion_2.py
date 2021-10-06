@@ -35,3 +35,36 @@ alguno de lo soportados o no es la palabra "FIN".
 
 print("Mi Calculadora (^_^)")
 # Empezar aquí la resolución del ejercicio
+operadores = ["+","-","*","/","**","FIN"]
+numero_1 = float(input("Ingrese Primer Numero: "))
+operador = str(input("Ingrese Operador +,-,/,* ó ** /// Para Salir escriba FIN: "))
+while operador not in operadores:
+    operador = str(input(" ERROR! Ingrese un operador valido: "))
+    if operador == "FIN":
+        break
+ 
+
+while operador != "FIN":
+    numero_2 = float(input("Ingrese Segundo Numero: ")) #Pido acá el segundo numero, porque si se ingresa FIN en primera instancia, ya no se pide el 2do numero.
+    if operador == "+":
+        resultado = numero_1 + numero_2
+    elif operador == "-":
+        resultado = numero_1 - numero_2
+    elif operador == "*":
+        resultado = numero_1 * numero_2
+    elif operador == "/":
+        resultado = numero_1 / numero_2
+    elif operador == "**":
+        resultado = numero_1 ** numero_2
+    print("El resultado es: ", resultado)
+    numero_1 = float(input("Ingrese Primer Numero: "))
+    operador = str(input("Ingrese Operador +,-,/,* ó ** /// Para Salir escriba FIN: "))
+    while operador not in operadores:
+        operador = str(input(" ERROR! Ingrese un operador valido: "))
+    
+
+
+
+
+
+

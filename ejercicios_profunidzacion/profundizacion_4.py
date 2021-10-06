@@ -10,8 +10,6 @@
 # de mucho más tiempo para abordar estos temas por su cuenta.
 # Requiere mayor tiempo de dedicación e investigación autodidacta.
 
-temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
-                  14.7, 19.6, 11.2, 18.4]
 
 # IMPORTANTE: NO borrar los comentarios en VERDE o NARANJA
 
@@ -39,17 +37,6 @@ NOTA: No se debe ordenar la lista de temperaturas, se debe obtener
 el máximo y el mínimo utilizando los mismos métodos vistos
 durante la clase (ejemplos_clase/ejemplo_5.py)
 '''
-
-print("Mi primer pasito en data analytics")
-# Empezar aquí la resolución del ejercicio
-
-temperatura_max = None      # Aquí debe ir almacenando la temp máxima
-temperatura_min = None      # Aquí debe ir almacenando la temp mínima
-temperatura_sumatoria = 0   # Aquí debe ir almacenando la suma de todas las temp
-temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el promedio
-temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
-
-# Colocar el bucle aqui......
 
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
@@ -83,3 +70,46 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+
+print("Mi primer pasito en data analytics")
+
+temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
+                  14.7, 19.6, 11.2, 18.4]
+temperatura_max = None      # Aquí debe ir almacenando la temp máxima
+temperatura_min = None      # Aquí debe ir almacenando la temp mínima
+temperatura_sumatoria = 0   # Aquí debe ir almacenando la suma de todas las temp
+temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el promedio
+temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
+
+temperatura_len = len(temp_dataloger)
+
+for i in range (0,temperatura_len):
+    if temperatura_max == None:
+        temperatura_max = temp_dataloger[i]
+    if temperatura_min == None:
+        temperatura_min = temp_dataloger[i]    
+    if temp_dataloger[i] > temperatura_max:
+        temperatura_max = temp_dataloger[i]
+    elif temp_dataloger[i] < temperatura_min:
+        temperatura_min = temp_dataloger[i]
+    temperatura_sumatoria += temp_dataloger[i]
+
+temperatura_promedio = temperatura_sumatoria/temperatura_len
+print("Cantidad de Temperaturas: ", temperatura_len)
+print("Suma de Temperaturas: ", round(temperatura_sumatoria,2))
+print("Temperatura Promedio: ", round(temperatura_promedio,2))
+print("Temperatura Maxima: ",temperatura_max)
+print("Temperatura Minima: ",temperatura_min)
+
+print("Valor Max con Funcion: ",max(temp_dataloger))
+print("Valor Min con Funcion: ",min(temp_dataloger))
+print("Sumatoria con Funcion: ",round(sum(temp_dataloger),2))
+
+if temperatura_max <= 28 and temperatura_min >=19:
+    print("ESTAMOS EN VERANO")
+elif temperatura_max <= 20 and temperatura_min >= 11:
+    print("ESTAMOS EN OTOÑO")
+elif temperatura_max <= 14 and temperatura_min >= 8:
+    print("ESTAMOS EN INVIERNO")
+elif temperatura_max <= 24 and temperatura_min >= 10:
+    print("ESTAMOS EN PRIMAVERA")

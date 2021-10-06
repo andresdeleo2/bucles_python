@@ -27,9 +27,17 @@ sino que va hasta el anterior.
 print('Comenzamos a ponernos serios!')
 # Empezar aquí la resolución del ejercicio
 
-# inicio = ....
-# fin = ....
+inicio = int(input("Ingrese número de Inicio: "))
+fin =int(input("Ingrese número de Fin: "))
 
+cantidad_numeros = 0
+sumatoria = 0
+for i in range(inicio, fin+1):
+    cantidad_numeros = cantidad_numeros + 1 
+    sumatoria = sumatoria + i
+
+promedio = sumatoria / cantidad_numeros
+print(f"Cantidad de Numeros = {cantidad_numeros},Sumatoria = {sumatoria} y Promedio = {promedio}")
 # cantidad_numeros ....
 # sumatoria ....
 
